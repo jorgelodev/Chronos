@@ -3,3 +3,16 @@
 ################################################################################
 
 /packages
+/.vs
+/obj
+/src/Chronos.API/bin/Debug
+/src/Chronos.API/obj
+/src/Chronos.Domain/bin/Debug
+/src/Chronos.Domain/obj
+/src/Chronos.Infra.Data/bin/Debug
+/src/Chronos.Infra.Data/obj
+/src/Chronos.Infra.Data/Migrations
+/src/Chronos.WF/bin/Debug
+/src/Chronos.WF/obj
+/src/Chronos.WF.Core/bin/Debug/netcoreapp3.1
+/src/Chronos.WF.Core/obj
