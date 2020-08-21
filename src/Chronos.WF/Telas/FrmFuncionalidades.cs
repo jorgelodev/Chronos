@@ -26,8 +26,13 @@ namespace Chronos.WF.Telas
         private string UrlBase;
         private FuncionalidadeViewModel funcionalidadeSelecionada;
 
+        public Guid ProjetoId;
+
         private void FrmFuncionalidades_Load(object sender, EventArgs e)
         {
+            if (ProjetoId.Equals(""))
+                this.Close();
+
             UrlBase = ConfigurationManager.AppSettings["UrlBase"].ToString();
             CarregaFuncionalidades();
         }
@@ -35,13 +40,25 @@ namespace Chronos.WF.Telas
         {
             dgFuncionalidades.Rows.Clear();
 
+            var objeto = new FuncionalidadeViewModel()
+            {
+                ProjetoId = ProjetoId,
+                CodigoFuncionalidade = new CodigoFuncionalidadeViewModel()
+                {
+                    IdentificacaoCompleta = txtCodigoFuncionalidade.Text
+                }
+            };
+
             using (var httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Accept.Clear();
                 httpClient.DefaultRequestHeaders.Accept.Add(
                     new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = httpClient.GetAsync(UrlBase + $"funcionalidade/obter-por-codigofuncionalidade/{txtCodigoFuncionalidade.Text}").Result;
+                var serializedObjeto = JsonConvert.SerializeObject(objeto);
+                var content = new StringContent(serializedObjeto, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = httpClient.GetAsync(UrlBase + $"funcionalidade/obter-por-codigofuncionalidade/{ProjetoId}/{txtCodigoFuncionalidade.Text}").Result;
 
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -50,7 +67,7 @@ namespace Chronos.WF.Telas
                     var projetos = JsonConvert.DeserializeObject<List<FuncionalidadeViewModel>>(conteudo);
                     foreach (var item in projetos)
                     {
-                        dgFuncionalidades.Rows.Add(dgvcEditar.Image, dgvcExcluir.Image, item.Projeto.NomeProjeto,item.Menu.NomeMenu,item.CodigoFuncionalidade);
+                        dgFuncionalidades.Rows.Add(dgvcEditar.Image, dgvcExcluir.Image, item.Projeto.NomeProjeto, item.Menu.NomeMenu, item.CodigoFuncionalidade.IdentificacaoCompleta, item.Ativado ? "X" : "");
                         dgFuncionalidades.Rows[dgFuncionalidades.Rows.Count - 1].Tag = item;
                     }
                 }
@@ -62,6 +79,11 @@ namespace Chronos.WF.Telas
         }
 
         private void txtCodigoFuncionalidade_Enter(object sender, EventArgs e)
+        {
+            CarregaFuncionalidades();
+        }
+
+        private void btBuscar_Click(object sender, EventArgs e)
         {
             CarregaFuncionalidades();
         }

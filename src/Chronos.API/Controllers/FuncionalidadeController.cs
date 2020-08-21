@@ -38,10 +38,10 @@ namespace Chronos.Services.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("obter-por-codigofuncionalidade/{codigoFuncionalidade}")]
-        public async Task<IEnumerable<FuncionalidadeViewModel>> ObterPorCodigoFuncionalidade(string codigoFuncionalidade)
+        [HttpGet("obter-por-codigofuncionalidade/{projetoId:guid}/{codigoFuncionalidade}")]
+        public async Task<IEnumerable<FuncionalidadeViewModel>> ObterPorCodigoFuncionalidade(Guid projetoId,string? codigoFuncionalidade)
         {
-            var returno = _mapper.Map<IEnumerable<FuncionalidadeViewModel>>(await _funcionalidadeRepository.ObterPorCodigoFuncionalidade(codigoFuncionalidade));
+            var returno = _mapper.Map<IEnumerable<FuncionalidadeViewModel>>(await _funcionalidadeService.ObterPorCodigoFuncionalidade(codigoFuncionalidade));
             return returno;
         }
 

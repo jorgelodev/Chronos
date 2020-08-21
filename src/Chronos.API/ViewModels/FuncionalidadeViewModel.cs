@@ -21,7 +21,9 @@ namespace Chronos.API.ViewModels
         [ScaffoldColumn(false)]
         public FuncionalidadeViewModel FuncionalidadePai { get; set; }
         public Guid? FuncionalidadePaiId { get; set; }
+
         public CodigoFuncionalidadeViewModel CodigoFuncionalidade { get; set; }
+     
         public string Descricao { get;set; }
         public bool Ativado { get; set; }
        

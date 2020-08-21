@@ -8,6 +8,6 @@ namespace Chronos.Business.Interfaces.Repositories
 {
     public interface IFuncionalidadeRepository:IRepositoryBase<Funcionalidade>
     {
-        Task<IEnumerable<Funcionalidade>> ObterPorCodigoFuncionalidade(string codigoFuncionalidade);
+        Task<IEnumerable<Funcionalidade>> ObterPorCodigoFuncionalidade(Guid projetoId,string codigoFuncionalidade);
     }
 }

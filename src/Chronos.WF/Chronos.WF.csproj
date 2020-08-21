@@ -121,7 +121,7 @@
     <None Include="Resources\BT_DesEditar.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\imgLupa.png" />
+    <None Include="Resources\imgLista.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

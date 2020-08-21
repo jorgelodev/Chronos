@@ -278,9 +278,6 @@ namespace Chronos.WF.Telas
 
             using (var httpClient = new HttpClient())
             {
-                var serializedObjeto = JsonConvert.SerializeObject(NovoObjeto);
-                var content = new StringContent(serializedObjeto, Encoding.UTF8, "application/json");
-
                 var response = httpClient.PostAsJsonAsync(UrlBase + "menu/", NovoObjeto).Result;
 
                 if (response.IsSuccessStatusCode)
@@ -398,6 +395,13 @@ namespace Chronos.WF.Telas
         private void cmbProjeto_SelectedValueChanged(object sender, EventArgs e)
         {
             CarregaMenu();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            FrmFuncionalidades frm = new FrmFuncionalidades();
+            frm.ProjetoId = Guid.Parse(cmbProjeto.SelectedValue.ToString());
+            frm.ShowDialog();
         }
     }
 }

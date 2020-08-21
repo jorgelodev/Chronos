@@ -17,12 +17,14 @@ namespace Chronos.Business.Entities
             Prefixo = prefixo;
             Ativado = ativado;
             Menus = new List<Menu>();
+            Funcionalidades = new List<Funcionalidade>();
         }
 
         public string NomeProjeto { get; private set; }
         public string Prefixo { get; private set; }
         public bool Ativado { get; private set; }
-        public virtual ICollection<Menu> Menus { get; set; }        
+        public virtual ICollection<Menu> Menus { get; set; }       
+        public virtual ICollection<Funcionalidade> Funcionalidades { get; set; }
         public override bool EhValido()
         {            
             RuleFor(c => c.NomeProjeto)

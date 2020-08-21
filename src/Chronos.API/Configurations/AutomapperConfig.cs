@@ -17,9 +17,7 @@ namespace Chronos.API.Configurations
             CreateMap<Manual, ManualViewModel>();
             CreateMap<Diagrama, DiagramaViewModel>();
 
-            //CreateMap<Projeto, ProjetoViewModel>()
-            //    .ForMember(dest => dest.ValidationResult, opt => opt.MapFrom(src => src.ValidationResult));
-
+            
             //CreateMap<Produto, ProdutoViewModel>()
             //    .ForMember(dest => dest.NomeFornecedor, opt => opt.MapFrom(src => src.Fornecedor.Nome));
         }

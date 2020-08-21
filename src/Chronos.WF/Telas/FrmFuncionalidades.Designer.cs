@@ -39,12 +39,14 @@
             this.txtCodigoFuncionalidade = new System.Windows.Forms.TextBox();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btAdicionaProjeto = new System.Windows.Forms.Button();
+            this.btAdicionaFuncionalidade = new System.Windows.Forms.Button();
+            this.btBuscar = new System.Windows.Forms.Button();
             this.dgvcEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvcExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvcCodigoFuncionalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvcNomeProjeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NomeMenu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvcCodigoFuncionalidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvbAtivado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionalidades)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,9 +71,10 @@
             this.dgFuncionalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgvcEditar,
             this.dgvcExcluir,
-            this.dgvcCodigoFuncionalidade,
             this.dgvcNomeProjeto,
-            this.NomeMenu});
+            this.NomeMenu,
+            this.dgvcCodigoFuncionalidade,
+            this.dgvbAtivado});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,7 +97,7 @@
             this.dgFuncionalidades.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgFuncionalidades.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dgFuncionalidades.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgFuncionalidades.Size = new System.Drawing.Size(709, 231);
+            this.dgFuncionalidades.Size = new System.Drawing.Size(709, 331);
             this.dgFuncionalidades.TabIndex = 9;
             // 
             // label1
@@ -133,18 +136,32 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 30;
             // 
-            // btAdicionaProjeto
+            // btAdicionaFuncionalidade
             // 
-            this.btAdicionaProjeto.BackColor = System.Drawing.Color.White;
-            this.btAdicionaProjeto.FlatAppearance.BorderSize = 0;
-            this.btAdicionaProjeto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdicionaProjeto.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
-            this.btAdicionaProjeto.Location = new System.Drawing.Point(673, 310);
-            this.btAdicionaProjeto.Name = "btAdicionaProjeto";
-            this.btAdicionaProjeto.Size = new System.Drawing.Size(74, 28);
-            this.btAdicionaProjeto.TabIndex = 6;
-            this.btAdicionaProjeto.Text = "+ Adicionar";
-            this.btAdicionaProjeto.UseVisualStyleBackColor = false;
+            this.btAdicionaFuncionalidade.BackColor = System.Drawing.Color.White;
+            this.btAdicionaFuncionalidade.FlatAppearance.BorderSize = 0;
+            this.btAdicionaFuncionalidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdicionaFuncionalidade.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
+            this.btAdicionaFuncionalidade.Location = new System.Drawing.Point(673, 410);
+            this.btAdicionaFuncionalidade.Name = "btAdicionaFuncionalidade";
+            this.btAdicionaFuncionalidade.Size = new System.Drawing.Size(74, 28);
+            this.btAdicionaFuncionalidade.TabIndex = 6;
+            this.btAdicionaFuncionalidade.Text = "+ Adicionar";
+            this.btAdicionaFuncionalidade.UseVisualStyleBackColor = false;
+            // 
+            // btBuscar
+            // 
+            this.btBuscar.BackColor = System.Drawing.Color.White;
+            this.btBuscar.FlatAppearance.BorderSize = 0;
+            this.btBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBuscar.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
+            this.btBuscar.Location = new System.Drawing.Point(158, 34);
+            this.btBuscar.Name = "btBuscar";
+            this.btBuscar.Size = new System.Drawing.Size(74, 28);
+            this.btBuscar.TabIndex = 10;
+            this.btBuscar.Text = "Buscar";
+            this.btBuscar.UseVisualStyleBackColor = false;
+            this.btBuscar.Click += new System.EventHandler(this.btBuscar_Click);
             // 
             // dgvcEditar
             // 
@@ -164,15 +181,6 @@
             this.dgvcExcluir.Name = "dgvcExcluir";
             this.dgvcExcluir.Width = 30;
             // 
-            // dgvcCodigoFuncionalidade
-            // 
-            this.dgvcCodigoFuncionalidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvcCodigoFuncionalidade.DataPropertyName = "CodigoFuncionalidade";
-            this.dgvcCodigoFuncionalidade.FillWeight = 364.8877F;
-            this.dgvcCodigoFuncionalidade.HeaderText = "Código Funcionalidade";
-            this.dgvcCodigoFuncionalidade.Name = "dgvcCodigoFuncionalidade";
-            this.dgvcCodigoFuncionalidade.Width = 150;
-            // 
             // dgvcNomeProjeto
             // 
             this.dgvcNomeProjeto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -189,16 +197,31 @@
             this.NomeMenu.HeaderText = "Menu";
             this.NomeMenu.Name = "NomeMenu";
             // 
+            // dgvcCodigoFuncionalidade
+            // 
+            this.dgvcCodigoFuncionalidade.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvcCodigoFuncionalidade.DataPropertyName = "CodigoFuncionalidade";
+            this.dgvcCodigoFuncionalidade.FillWeight = 364.8877F;
+            this.dgvcCodigoFuncionalidade.HeaderText = "Código Funcionalidade";
+            this.dgvcCodigoFuncionalidade.Name = "dgvcCodigoFuncionalidade";
+            this.dgvcCodigoFuncionalidade.Width = 150;
+            // 
+            // dgvbAtivado
+            // 
+            this.dgvbAtivado.HeaderText = "Ativado?";
+            this.dgvbAtivado.Name = "dgvbAtivado";
+            // 
             // FrmFuncionalidades
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btBuscar);
             this.Controls.Add(this.dgFuncionalidades);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtCodigoFuncionalidade);
-            this.Controls.Add(this.btAdicionaProjeto);
+            this.Controls.Add(this.btAdicionaFuncionalidade);
             this.Name = "FrmFuncionalidades";
             this.Load += new System.EventHandler(this.FrmFuncionalidades_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgFuncionalidades)).EndInit();
@@ -212,13 +235,15 @@
         private System.Windows.Forms.DataGridView dgFuncionalidades;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCodigoFuncionalidade;
-        private System.Windows.Forms.Button btAdicionaProjeto;
+        private System.Windows.Forms.Button btAdicionaFuncionalidade;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.Button btBuscar;
         private System.Windows.Forms.DataGridViewImageColumn dgvcEditar;
         private System.Windows.Forms.DataGridViewImageColumn dgvcExcluir;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcCodigoFuncionalidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgvcNomeProjeto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeMenu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvcCodigoFuncionalidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgvbAtivado;
     }
 }

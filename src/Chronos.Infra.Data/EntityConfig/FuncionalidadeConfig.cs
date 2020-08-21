@@ -20,7 +20,7 @@ namespace Chronos.Infra.Data.EntityConfig
 			builder.Property(p => p.MenuId)
 				.IsRequired();
 
-			// 1 : N => Funcionalidade : Sds
+			// 1 : 1 => Funcionalidade : Sds
 			builder.HasOne(f => f.Sds)
 				.WithOne(d => d.Funcionalidade);
 

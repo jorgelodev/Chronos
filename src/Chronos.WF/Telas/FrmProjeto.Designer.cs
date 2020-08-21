@@ -33,20 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjeto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btAdicionaProjeto = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProjeto));
             this.txtNomeProjeto = new System.Windows.Forms.TextBox();
             this.txtPrefixoProjeto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgProjetos = new System.Windows.Forms.DataGridView();
-            this.dgvcEditar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dgvcExcluir = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvcNomeProjeto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -56,30 +53,25 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPrefixoMenu = new System.Windows.Forms.TextBox();
             this.txtNomeMenu = new System.Windows.Forms.TextBox();
-            this.btAdicionaMenu = new System.Windows.Forms.Button();
             this.dgMenus = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btAdicionaMenu = new System.Windows.Forms.Button();
             this.dgvmEditar = new System.Windows.Forms.DataGridViewImageColumn();
             this.dgvmExcluir = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btAdicionaProjeto = new System.Windows.Forms.Button();
+            this.dgvcEditar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dgvcExcluir = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgProjetos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMenus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btAdicionaProjeto
-            // 
-            this.btAdicionaProjeto.BackColor = System.Drawing.Color.White;
-            this.btAdicionaProjeto.FlatAppearance.BorderSize = 0;
-            this.btAdicionaProjeto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdicionaProjeto.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
-            this.btAdicionaProjeto.Location = new System.Drawing.Point(402, 32);
-            this.btAdicionaProjeto.Name = "btAdicionaProjeto";
-            this.btAdicionaProjeto.Size = new System.Drawing.Size(74, 28);
-            this.btAdicionaProjeto.TabIndex = 0;
-            this.btAdicionaProjeto.Text = "+ Adicionar";
-            this.btAdicionaProjeto.UseVisualStyleBackColor = false;
-            this.btAdicionaProjeto.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtNomeProjeto
             // 
@@ -163,24 +155,6 @@
             this.dgProjetos.TabIndex = 5;
             this.dgProjetos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgProjetos_CellContentClick);
             // 
-            // dgvcEditar
-            // 
-            this.dgvcEditar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvcEditar.FillWeight = 78.14275F;
-            this.dgvcEditar.HeaderText = "...";
-            this.dgvcEditar.Image = global::Chronos.WF.Properties.Resources.imgLapis;
-            this.dgvcEditar.Name = "dgvcEditar";
-            this.dgvcEditar.Width = 30;
-            // 
-            // dgvcExcluir
-            // 
-            this.dgvcExcluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dgvcExcluir.FillWeight = 56.16979F;
-            this.dgvcExcluir.HeaderText = "...";
-            this.dgvcExcluir.Image = ((System.Drawing.Image)(resources.GetObject("dgvcExcluir.Image")));
-            this.dgvcExcluir.Name = "dgvcExcluir";
-            this.dgvcExcluir.Width = 30;
-            // 
             // dgvcNomeProjeto
             // 
             this.dgvcNomeProjeto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -206,6 +180,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.cmbProjeto);
             this.groupBox2.Controls.Add(this.label3);
@@ -223,7 +198,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 31);
+            this.label5.Location = new System.Drawing.Point(15, 29);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 13);
             this.label5.TabIndex = 12;
@@ -233,7 +208,7 @@
             // 
             this.cmbProjeto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbProjeto.FormattingEnabled = true;
-            this.cmbProjeto.Location = new System.Drawing.Point(18, 47);
+            this.cmbProjeto.Location = new System.Drawing.Point(18, 45);
             this.cmbProjeto.Name = "cmbProjeto";
             this.cmbProjeto.Size = new System.Drawing.Size(308, 21);
             this.cmbProjeto.TabIndex = 11;
@@ -272,20 +247,6 @@
             this.txtNomeMenu.Name = "txtNomeMenu";
             this.txtNomeMenu.Size = new System.Drawing.Size(308, 20);
             this.txtNomeMenu.TabIndex = 1;
-            // 
-            // btAdicionaMenu
-            // 
-            this.btAdicionaMenu.BackColor = System.Drawing.Color.White;
-            this.btAdicionaMenu.FlatAppearance.BorderSize = 0;
-            this.btAdicionaMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdicionaMenu.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
-            this.btAdicionaMenu.Location = new System.Drawing.Point(402, 88);
-            this.btAdicionaMenu.Name = "btAdicionaMenu";
-            this.btAdicionaMenu.Size = new System.Drawing.Size(74, 28);
-            this.btAdicionaMenu.TabIndex = 0;
-            this.btAdicionaMenu.Text = "+ Adicionar";
-            this.btAdicionaMenu.UseVisualStyleBackColor = false;
-            this.btAdicionaMenu.Click += new System.EventHandler(this.btAdicionaMenu_Click);
             // 
             // dgMenus
             // 
@@ -335,6 +296,65 @@
             this.dgMenus.TabIndex = 7;
             this.dgMenus.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgMenus_CellContentClick);
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "NomeMenu";
+            this.dataGridViewTextBoxColumn1.FillWeight = 278.7092F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Nome do Menu";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn1.FillWeight = 78.14275F;
+            this.dataGridViewImageColumn1.HeaderText = "...";
+            this.dataGridViewImageColumn1.Image = global::Chronos.WF.Properties.Resources.imgLapis;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 30;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn2.FillWeight = 56.16979F;
+            this.dataGridViewImageColumn2.HeaderText = "...";
+            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 30;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn3.FillWeight = 78.14275F;
+            this.dataGridViewImageColumn3.HeaderText = "...";
+            this.dataGridViewImageColumn3.Image = global::Chronos.WF.Properties.Resources.imgLapis;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.Width = 30;
+            // 
+            // dataGridViewImageColumn4
+            // 
+            this.dataGridViewImageColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewImageColumn4.FillWeight = 56.16979F;
+            this.dataGridViewImageColumn4.HeaderText = "...";
+            this.dataGridViewImageColumn4.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn4.Image")));
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 30;
+            // 
+            // btAdicionaMenu
+            // 
+            this.btAdicionaMenu.BackColor = System.Drawing.Color.White;
+            this.btAdicionaMenu.FlatAppearance.BorderSize = 0;
+            this.btAdicionaMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdicionaMenu.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
+            this.btAdicionaMenu.Location = new System.Drawing.Point(402, 88);
+            this.btAdicionaMenu.Name = "btAdicionaMenu";
+            this.btAdicionaMenu.Size = new System.Drawing.Size(74, 28);
+            this.btAdicionaMenu.TabIndex = 0;
+            this.btAdicionaMenu.Text = "+ Adicionar";
+            this.btAdicionaMenu.UseVisualStyleBackColor = false;
+            this.btAdicionaMenu.Click += new System.EventHandler(this.btAdicionaMenu_Click);
+            // 
             // dgvmEditar
             // 
             this.dgvmEditar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -353,14 +373,48 @@
             this.dgvmExcluir.Name = "dgvmExcluir";
             this.dgvmExcluir.Width = 30;
             // 
-            // dataGridViewTextBoxColumn1
+            // btAdicionaProjeto
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "NomeMenu";
-            this.dataGridViewTextBoxColumn1.FillWeight = 278.7092F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Nome do Menu";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.btAdicionaProjeto.BackColor = System.Drawing.Color.White;
+            this.btAdicionaProjeto.FlatAppearance.BorderSize = 0;
+            this.btAdicionaProjeto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdicionaProjeto.Image = global::Chronos.WF.Properties.Resources.imgBotaoPequenoHover;
+            this.btAdicionaProjeto.Location = new System.Drawing.Point(402, 32);
+            this.btAdicionaProjeto.Name = "btAdicionaProjeto";
+            this.btAdicionaProjeto.Size = new System.Drawing.Size(74, 28);
+            this.btAdicionaProjeto.TabIndex = 0;
+            this.btAdicionaProjeto.Text = "+ Adicionar";
+            this.btAdicionaProjeto.UseVisualStyleBackColor = false;
+            this.btAdicionaProjeto.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvcEditar
+            // 
+            this.dgvcEditar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvcEditar.FillWeight = 78.14275F;
+            this.dgvcEditar.HeaderText = "...";
+            this.dgvcEditar.Image = global::Chronos.WF.Properties.Resources.imgLapis;
+            this.dgvcEditar.Name = "dgvcEditar";
+            this.dgvcEditar.Width = 30;
+            // 
+            // dgvcExcluir
+            // 
+            this.dgvcExcluir.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dgvcExcluir.FillWeight = 56.16979F;
+            this.dgvcExcluir.HeaderText = "...";
+            this.dgvcExcluir.Image = ((System.Drawing.Image)(resources.GetObject("dgvcExcluir.Image")));
+            this.dgvcExcluir.Name = "dgvcExcluir";
+            this.dgvcExcluir.Width = 30;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Chronos.WF.Properties.Resources.imgLista;
+            this.pictureBox1.Location = new System.Drawing.Point(332, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 37);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // FrmProjeto
             // 
@@ -383,6 +437,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgMenus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -411,5 +466,10 @@
         private System.Windows.Forms.DataGridViewImageColumn dgvmEditar;
         private System.Windows.Forms.DataGridViewImageColumn dgvmExcluir;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
     }
 }

@@ -32,6 +32,7 @@ namespace Chronos.API
         {
             services.AddDbContext<DBContext>(options =>
             {
+                options.UseLazyLoadingProxies(false);
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 

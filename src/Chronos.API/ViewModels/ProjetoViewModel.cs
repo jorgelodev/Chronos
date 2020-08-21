@@ -24,7 +24,8 @@ namespace Chronos.API.ViewModels
         public DateTime DataCadastro { get; set; }
 
         public IEnumerable<MenuViewModel> Menus { get; set; }
-          
+
+        public IEnumerable<FuncionalidadeViewModel> Funcionalidades { get; set; }
         public FluentValidation.Results.ValidationResult ValidationResult { get; set; }
     }
 }

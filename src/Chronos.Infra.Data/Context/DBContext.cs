@@ -15,7 +15,9 @@ namespace Chronos.Infra.Data.Context
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {            
+        {
+            optionsBuilder
+                 .UseLazyLoadingProxies(false);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

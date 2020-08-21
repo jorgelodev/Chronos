@@ -17,7 +17,12 @@ namespace Chronos.Infra.Data.EntityConfig
             builder.Property(p => p.Prefixo)
                 .HasMaxLength(3)
                 .IsRequired();
-                       
+
+            // 1 : N => Projeto : Funcionalidades
+            builder.HasMany(p => p.Funcionalidades)
+                .WithOne(m => m.Projeto)
+                .HasForeignKey(m => m.ProjetoId);
+
             // 1 : N => Projeto : Menus
             builder.HasMany(p => p.Menus)
                 .WithOne(m => m.Projeto)
